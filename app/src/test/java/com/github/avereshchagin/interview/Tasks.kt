@@ -6,21 +6,6 @@ import org.junit.Assert.*
 
 class Tasks {
 
-    // true если длина content не меньше 6 символов
-    fun validateAtLeast6Characters(content: CharSequence): Boolean {
-
-    }
-
-    @Test
-    fun testAtLeast6Characters() {
-        assertTrue(validateAtLeast6Characters("123456"))
-        assertTrue(validateAtLeast6Characters("1234567890"))
-
-        assertFalse(validateAtLeast6Characters(""))
-        assertFalse(validateAtLeast6Characters("1"))
-        assertFalse(validateAtLeast6Characters("12345"))
-    }
-
     // true если content содержит хотя бы одну английскую букву и одну цифру
     fun validateNumberAndCharacter(content: CharSequence): Boolean {
 
@@ -76,7 +61,25 @@ class Tasks {
         assertTrue(validateOnlyEnglishCharacters("Q4"))
 
         assertFalse(validateOnlyEnglishCharacters("Q4t*"))
+        assertFalse(validateOnlyEnglishCharacters("Q4š"))
         assertFalse(validateOnlyEnglishCharacters("??"))
         assertFalse(validateOnlyEnglishCharacters(","))
+    }
+
+    // На вход поступают отсортированнвые списки значений типа Int,
+    // выходной список должен содержать элементы из первых двух списков в порядке возрастания.
+    // Необходимо реализовать оптимальный по алгоритмической сложности алгоритм
+    fun merge(first: List<Int>, second: List<Int>): List<Int> {
+
+    }
+
+    @Test
+    fun testMerge() {
+        assertEquals(listOf<Int>(), merge(listOf(), listOf()))
+        assertEquals(listOf(4), merge(listOf(4), listOf()))
+        assertEquals(listOf(7), merge(listOf(), listOf(7)))
+        assertEquals(listOf(1, 2), merge(listOf(1), listOf(2)))
+        assertEquals(listOf(3, 3), merge(listOf(3), listOf(3)))
+        assertEquals(listOf(1, 2, 5, 5, 7, 7, 8), merge(listOf(2, 5, 7, 7, 8), listOf(1, 5)))
     }
 }
