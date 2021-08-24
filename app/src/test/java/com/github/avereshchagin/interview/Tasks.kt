@@ -6,25 +6,8 @@ import org.junit.Assert.*
 
 class Tasks {
 
-    // true если content содержит хотя бы одну английскую букву и одну цифру
-    fun validateNumberAndCharacter(content: CharSequence): Boolean {
-
-    }
-
-    @Test
-    fun testNumberAndCharacter() {
-        assertTrue(validateNumberAndCharacter("a1a"))
-        assertTrue(validateNumberAndCharacter("8g5"))
-        assertTrue(validateNumberAndCharacter("8T2"))
-        assertTrue(validateNumberAndCharacter("U7u"))
-
-        assertFalse(validateNumberAndCharacter("75"))
-        assertFalse(validateNumberAndCharacter("aT"))
-        assertFalse(validateNumberAndCharacter("Un"))
-    }
-
-    // true если content не содержит последовательность из трёх и более идущих в алфавитном порядке букв и цифр,
-    // например 123 или abc
+    // true when content does not contain a sequence of 3 and more characters or digits in alphabetical order,
+    // for example 123 or abc
     fun validateConsecutiveCharacters(content: CharSequence): Boolean {
 
     }
@@ -46,7 +29,7 @@ class Tasks {
         assertFalse(validateConsecutiveCharacters("3wDEF"))
     }
 
-    // true если content не содержит ничего, кроме букв английского алфавита и цифр
+    // true when content contains only English characters and digits
     fun validateOnlyEnglishCharacters(content: CharSequence): Boolean {
 
     }
@@ -66,9 +49,8 @@ class Tasks {
         assertFalse(validateOnlyEnglishCharacters(","))
     }
 
-    // На вход поступают отсортированнвые списки значений типа Int,
-    // выходной список должен содержать элементы из первых двух списков в порядке возрастания.
-    // Необходимо реализовать оптимальный по алгоритмической сложности алгоритм
+    // Input: two sorted in ascending order lists of Int values,
+    // output list must contain values from input lists in ascending order
     fun merge(first: List<Int>, second: List<Int>): List<Int> {
 
     }
